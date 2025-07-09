@@ -7,7 +7,7 @@ import { Infer } from '@vinejs/vine/types'
  */
 export const createUserValidator = vine.compile(
   vine.object({
-    email: vine.string().trim().email(),
+    email: vine.string().trim().email().unique({ table: 'users', column: 'email' }),
     fullName: vine.string().trim().regex(userFullNameRegex),
     password: vine.string().trim().minLength(8).regex(userPasswordRegex),
   })
@@ -20,5 +20,27 @@ export const loginUserValidator = vine.compile(
   })
 )
 
+export const changeFullNameValidator = vine.compile(
+  vine.object({
+    fullName: vine.string().trim().regex(userFullNameRegex),
+  })
+)
+
+export const changeEmailValidator = vine.compile(
+  vine.object({
+    email: vine.string().trim().email().unique({ table: 'users', column: 'email' }),
+  })
+)
+
+export const changePasswordValidator = vine.compile(
+  vine.object({
+    old_password: vine.string(),
+    new_password: vine.string().trim().regex(userPasswordRegex),
+  })
+)
+
 export type CreateUserSchemaType = Infer<typeof createUserValidator>
 export type LoginUserSchemaType = Infer<typeof loginUserValidator>
+export type ChangeFullNameSchemaType = Infer<typeof changeFullNameValidator>
+export type ChangeEmailSchemaType = Infer<typeof changeEmailValidator>
+export type ChangePasswordSchemaType = Infer<typeof changePasswordValidator>

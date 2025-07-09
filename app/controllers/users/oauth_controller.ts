@@ -11,7 +11,6 @@ export default class OauthController {
   constructor(protected oauthService: OauthService) {}
 
   async redirect({ ally, params }: HttpContext) {
-    console.log(params)
     return ally.use(params.provider).redirect()
   }
 

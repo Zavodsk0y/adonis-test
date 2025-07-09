@@ -22,7 +22,16 @@ router.get('/', async () => {
 router.post('signup', [UsersController, 'signup'])
 router.post('login', [UsersController, 'login'])
 router.get('verify-email/:token', [UsersController, 'emailVerify'])
+
 router.get('users', [UsersController, 'index']).use(middleware.auth({ guards: ['api'] }))
+router
+  .group(() => {
+    router.patch('change-full-name', [UsersController, 'changeFullName'])
+    router.patch('change-email', [UsersController, 'changeEmail'])
+    router.patch('change-password', [UsersController, 'changePassword'])
+  })
+  .prefix('/users/me')
+  .use(middleware.auth({ guards: ['api'] }))
 
 router.get('/:provider/redirect', [OauthController, 'redirect']).where('provider', /github|google/)
 router

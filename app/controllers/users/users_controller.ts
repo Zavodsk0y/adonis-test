@@ -3,7 +3,12 @@
 import { inject } from '@adonisjs/core'
 import { HttpContext } from '@adonisjs/core/http'
 import { UserService } from '#services/users/user_service'
-import { createUserValidator, loginUserValidator } from '#validators/users/user'
+import {
+  changeEmailValidator,
+  changeFullNameValidator, changePasswordValidator,
+  createUserValidator,
+  loginUserValidator,
+} from '#validators/users/user'
 import User from '#models/user'
 
 @inject()
@@ -13,10 +18,10 @@ export default class UsersController {
   async signup(ctx: HttpContext) {
     const payload = await ctx.request.validateUsing(createUserValidator)
     const user = await this.userService.create(payload)
-    return {
+    return ctx.response.status(201).json({
       message: 'User created successfully, check your email for account verification',
       user: user,
-    }
+    })
   }
 
   async login(ctx: HttpContext) {
@@ -33,5 +38,26 @@ export default class UsersController {
 
   async index() {
     return await User.all()
+  }
+
+  async changeFullName(ctx: HttpContext) {
+    const payload = await ctx.request.validateUsing(changeFullNameValidator)
+    const user = ctx.auth.user!
+    await this.userService.updateFullName(user, payload)
+    return ctx.response.status(200).json({ message: 'Full name updated successfully', user })
+  }
+
+  async changeEmail(ctx: HttpContext) {
+    const payload = await ctx.request.validateUsing(changeEmailValidator)
+    const user = ctx.auth.user!
+    await this.userService.updateEmail(user, payload)
+    return ctx.response.status(200).json({ message: 'Email updated successfully, check your email for verification', user })
+  }
+
+  async changePassword(ctx: HttpContext) {
+    const payload = await ctx.request.validateUsing(changePasswordValidator)
+    const user = ctx.auth.user!
+    await this.userService.updatePassword(user, payload)
+    return ctx.response.status(200).json({ message: 'Password updated', user })
   }
 }
