@@ -22,8 +22,7 @@ export class UserService {
 
   async create(data: CreateUserSchemaType): Promise<User> {
     const user = await User.create(data)
-    user.emailTokenConfirmation = string.random(64) // TODO: Use merge() method
-    await user.save()
+    await user.merge({ emailTokenConfirmation: string.random(64) }).save()
     await mail.send(new VerifyEmailNotification(user))
     return user
   }
@@ -32,8 +31,7 @@ export class UserService {
     const user = await User.findBy('email_token_confirmation', token)
     if (!user) throw UserNotFoundException
     if (user.isVerified) throw EmailAlreadyConfirmedException
-    user.isVerified = true
-    await user.save()
+    await user.merge({ isVerified: true, emailTokenConfirmation: null }).save()
   }
 
   async login(payload: LoginUserSchemaType) {
