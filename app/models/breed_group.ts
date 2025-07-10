@@ -1,7 +1,7 @@
 import { DateTime } from 'luxon'
-import {BaseModel, column, hasMany} from '@adonisjs/lucid/orm'
-import Breed from "#models/breed";
-import type { HasMany } from "@adonisjs/lucid/types/relations";
+import { BaseModel, column, hasMany } from '@adonisjs/lucid/orm'
+import Breed from '#models/breed'
+import type { HasMany } from '@adonisjs/lucid/types/relations'
 
 export default class BreedGroup extends BaseModel {
   @column({ isPrimary: true })

@@ -2,7 +2,8 @@ import { inject } from '@adonisjs/core'
 import User from '#models/user'
 import {
   ChangeEmailSchemaType,
-  ChangeFullNameSchemaType, ChangePasswordSchemaType,
+  ChangeFullNameSchemaType,
+  ChangePasswordSchemaType,
   CreateUserSchemaType,
   LoginUserSchemaType,
 } from '#validators/user/user_validator'
@@ -12,9 +13,9 @@ import string from '@adonisjs/core/helpers/string'
 import VerifyEmailNotification from '#mails/verify_email_notification'
 import mail from '@adonisjs/mail/services/main'
 import EmailAlreadyConfirmedException from '#exceptions/user/email_already_confirmed_exception'
-import hash from "@adonisjs/core/services/hash";
-import PasswordMismatchException from "#exceptions/user/password_mismatch_exception";
-import PasswordIsNotDifferentException from "#exceptions/user/password_is_not_different_exception";
+import hash from '@adonisjs/core/services/hash'
+import PasswordMismatchException from '#exceptions/user/password_mismatch_exception'
+import PasswordIsNotDifferentException from '#exceptions/user/password_is_not_different_exception'
 
 @inject()
 export class UserService {
@@ -53,8 +54,8 @@ export class UserService {
   async updatePassword(user: User, payload: ChangePasswordSchemaType) {
     const { new_password: newPassword, old_password: oldPassword } = payload
 
-    if (!await hash.verify(user.password!, oldPassword)) throw new PasswordMismatchException
-    if (await hash.verify(user.password!, newPassword)) throw new PasswordIsNotDifferentException
+    if (!(await hash.verify(user.password!, oldPassword))) throw new PasswordMismatchException()
+    if (await hash.verify(user.password!, newPassword)) throw new PasswordIsNotDifferentException()
 
     await user.merge({ password: newPassword }).save()
   }

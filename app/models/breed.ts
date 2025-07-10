@@ -1,8 +1,8 @@
 import { DateTime } from 'luxon'
-import {BaseModel, belongsTo, column} from '@adonisjs/lucid/orm'
-import BreedGroup from "#models/breed_group";
-import type { BelongsTo } from "@adonisjs/lucid/types/relations";
-import {CherryPick, ModelObject} from "@adonisjs/lucid/types/model";
+import { BaseModel, belongsTo, column } from '@adonisjs/lucid/orm'
+import BreedGroup from '#models/breed_group'
+import type { BelongsTo } from '@adonisjs/lucid/types/relations'
+import { CherryPick, ModelObject } from '@adonisjs/lucid/types/model'
 
 export default class Breed extends BaseModel {
   @column({ isPrimary: true })

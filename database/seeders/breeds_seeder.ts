@@ -1,5 +1,5 @@
 import { readFile } from 'node:fs/promises'
-import Breed from "#models/breed";
+import Breed from '#models/breed'
 
 export default class BreedSeeder {
   async run() {

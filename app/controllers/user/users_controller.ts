@@ -5,7 +5,8 @@ import { HttpContext } from '@adonisjs/core/http'
 import { UserService } from '#services/user/user_service'
 import {
   changeEmailValidator,
-  changeFullNameValidator, changePasswordValidator,
+  changeFullNameValidator,
+  changePasswordValidator,
   createUserValidator,
   loginUserValidator,
 } from '#validators/user/user_validator'
@@ -51,7 +52,9 @@ export default class UsersController {
     const payload = await ctx.request.validateUsing(changeEmailValidator)
     const user = ctx.auth.user!
     await this.userService.updateEmail(user, payload)
-    return ctx.response.status(200).json({ message: 'Email updated successfully, check your email for verification', user })
+    return ctx.response
+      .status(200)
+      .json({ message: 'Email updated successfully, check your email for verification', user })
   }
 
   async changePassword(ctx: HttpContext) {
