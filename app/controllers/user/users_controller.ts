@@ -2,13 +2,13 @@
 
 import { inject } from '@adonisjs/core'
 import { HttpContext } from '@adonisjs/core/http'
-import { UserService } from '#services/users/user_service'
+import { UserService } from '#services/user/user_service'
 import {
   changeEmailValidator,
   changeFullNameValidator, changePasswordValidator,
   createUserValidator,
   loginUserValidator,
-} from '#validators/users/user'
+} from '#validators/user/user_validator'
 import User from '#models/user'
 
 @inject()

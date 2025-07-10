@@ -5,16 +5,16 @@ import {
   ChangeFullNameSchemaType, ChangePasswordSchemaType,
   CreateUserSchemaType,
   LoginUserSchemaType,
-} from '#validators/users/user'
-import UserNotFoundException from '#exceptions/users/user_not_found_exception'
+} from '#validators/user/user_validator'
+import UserNotFoundException from '#exceptions/user/user_not_found_exception'
 import { HttpContext } from '@adonisjs/core/http'
 import string from '@adonisjs/core/helpers/string'
 import VerifyEmailNotification from '#mails/verify_email_notification'
 import mail from '@adonisjs/mail/services/main'
-import EmailAlreadyConfirmedException from '#exceptions/users/email_already_confirmed_exception'
+import EmailAlreadyConfirmedException from '#exceptions/user/email_already_confirmed_exception'
 import hash from "@adonisjs/core/services/hash";
-import PasswordMismatchException from "#exceptions/users/password_mismatch_exception";
-import PasswordIsNotDifferentException from "#exceptions/users/password_is_not_different_exception";
+import PasswordMismatchException from "#exceptions/user/password_mismatch_exception";
+import PasswordIsNotDifferentException from "#exceptions/user/password_is_not_different_exception";
 
 @inject()
 export class UserService {

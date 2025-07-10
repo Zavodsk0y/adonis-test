@@ -1,7 +1,7 @@
 // import type { HttpContext } from '@adonisjs/core/http'
 
 import { HttpContext } from '@adonisjs/core/http'
-import { OauthService } from '#services/users/oauth_service'
+import { OauthService } from '#services/user/oauth_service'
 import { inject } from '@adonisjs/core'
 import { GithubDriver } from '@adonisjs/ally/drivers/github'
 import { GoogleDriver } from '@adonisjs/ally/drivers/google'

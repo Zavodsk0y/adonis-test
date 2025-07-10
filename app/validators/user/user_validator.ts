@@ -7,7 +7,7 @@ import { Infer } from '@vinejs/vine/types'
  */
 export const createUserValidator = vine.compile(
   vine.object({
-    email: vine.string().trim().email().unique({ table: 'users', column: 'email' }),
+    email: vine.string().trim().email().unique({ table: 'user', column: 'email' }),
     fullName: vine.string().trim().regex(userFullNameRegex),
     password: vine.string().trim().minLength(8).regex(userPasswordRegex),
   })
@@ -28,7 +28,7 @@ export const changeFullNameValidator = vine.compile(
 
 export const changeEmailValidator = vine.compile(
   vine.object({
-    email: vine.string().trim().email().unique({ table: 'users', column: 'email' }),
+    email: vine.string().trim().email().unique({ table: 'user', column: 'email' }),
   })
 )
 

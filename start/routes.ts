@@ -10,8 +10,8 @@
 import router from '@adonisjs/core/services/router'
 import { middleware } from '#start/kernel'
 
-const UsersController = () => import('#controllers/users/users_controller')
-const OauthController = () => import('#controllers/users/oauth_controller')
+const UsersController = () => import('#controllers/user/users_controller')
+const OauthController = () => import('#controllers/user/oauth_controller')
 
 router.get('/', async () => {
   return {
