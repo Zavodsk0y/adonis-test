@@ -1,0 +1,1570 @@
+[
+  {
+    "name": "Afador",
+    "breed_group_id": 8
+  },
+  {
+    "name": "Affenhuahua",
+    "breed_group_id": 8
+  },
+  {
+    "name": "Affenpinscher",
+    "breed_group_id": 2
+  },
+  {
+    "name": "Afghan Hound",
+    "breed_group_id": 3
+  },
+  {
+    "name": "Airedale Terrier",
+    "breed_group_id": 4
+  },
+  {
+    "name": "Akbash",
+    "breed_group_id": 5
+  },
+  {
+    "name": "Akita",
+    "breed_group_id": 5
+  },
+  {
+    "name": "Akita Chow",
+    "breed_group_id": 8
+  },
+  {
+    "name": "Akita Pit",
+    "breed_group_id": 8
+  },
+  {
+    "name": "Akita Shepherd",
+    "breed_group_id": 8
+  },
+  {
+    "name": "Alaskan Klee Kai",
+    "breed_group_id": 8
+  },
+  {
+    "name": "Alaskan Malamute",
+    "breed_group_id": 5
+  },
+  {
+    "name": "American Bulldog",
+    "breed_group_id": 5
+  },
+  {
+    "name": "American English Coonhound",
+    "breed_group_id": 3
+  },
+  {
+    "name": "American Eskimo Dog",
+    "breed_group_id": 2
+  },
+  {
+    "name": "American Foxhound",
+    "breed_group_id": 3
+  },
+  {
+    "name": "American Hairless Terrier",
+    "breed_group_id": 4
+  },
+  {
+    "name": "American Leopard Hound",
+    "breed_group_id": 3
+  },
+  {
+    "name": "American Pit Bull Terrier",
+    "breed_group_id": 4
+  },
+  {
+    "name": "American Pugabull",
+    "breed_group_id": 8
+  },
+  {
+    "name": "American Staffordshire Terrier",
+    "breed_group_id": 4
+  },
+  {
+    "name": "American Water Spaniel",
+    "breed_group_id": 6
+  },
+  {
+    "name": "Anatolian Shepherd Dog",
+    "breed_group_id": 7
+  },
+  {
+    "name": "Appenzeller Sennenhunde",
+    "breed_group_id": 7
+  },
+  {
+    "name": "Auggie",
+    "breed_group_id": 8
+  },
+  {
+    "name": "Aussiedoodle",
+    "breed_group_id": 8
+  },
+  {
+    "name": "Aussiepom",
+    "breed_group_id": 8
+  },
+  {
+    "name": "Australian Cattle Dog",
+    "breed_group_id": 7
+  },
+  {
+    "name": "Australian Kelpie",
+    "breed_group_id": 7
+  },
+  {
+    "name": "Australian Retriever",
+    "breed_group_id": 8
+  },
+  {
+    "name": "Australian Shepherd",
+    "breed_group_id": 7
+  },
+  {
+    "name": "Australian Shepherd Husky",
+    "breed_group_id": 8
+  },
+  {
+    "name": "Australian Shepherd Lab Mix",
+    "breed_group_id": 8
+  },
+  {
+    "name": "Australian Shepherd Pit Bull Mix",
+    "breed_group_id": 8
+  },
+  {
+    "name": "Australian Stumpy Tail Cattle Dog",
+    "breed_group_id": 7
+  },
+  {
+    "name": "Australian Terrier",
+    "breed_group_id": 4
+  },
+  {
+    "name": "Azawakh",
+    "breed_group_id": 3
+  },
+  {
+    "name": "Barbet",
+    "breed_group_id": 6
+  },
+  {
+    "name": "Basenji",
+    "breed_group_id": 3
+  },
+  {
+    "name": "Bassador",
+    "breed_group_id": 8
+  },
+  {
+    "name": "Basset Fauve de Bretagne",
+    "breed_group_id": 3
+  },
+  {
+    "name": "Basset Hound",
+    "breed_group_id": 3
+  },
+  {
+    "name": "Basset Retriever",
+    "breed_group_id": 8
+  },
+  {
+    "name": "Bavarian Mountain Scent Hound",
+    "breed_group_id": 3
+  },
+  {
+    "name": "Beabull",
+    "breed_group_id": 8
+  },
+  {
+    "name": "Beagle",
+    "breed_group_id": 3
+  },
+  {
+    "name": "Beaglier",
+    "breed_group_id": 8
+  },
+  {
+    "name": "Bearded Collie",
+    "breed_group_id": 7
+  },
+  {
+    "name": "Bedlington Terrier",
+    "breed_group_id": 4
+  },
+  {
+    "name": "Belgian Laekenois",
+    "breed_group_id": 7
+  },
+  {
+    "name": "Belgian Malinois",
+    "breed_group_id": 7
+  },
+  {
+    "name": "Belgian Sheepdog",
+    "breed_group_id": 7
+  },
+  {
+    "name": "Belgian Tervuren",
+    "breed_group_id": 7
+  },
+  {
+    "name": "Bergamasco Sheepdog",
+    "breed_group_id": 7
+  },
+  {
+    "name": "Berger Picard",
+    "breed_group_id": 7
+  },
+  {
+    "name": "Bernedoodle",
+    "breed_group_id": 8
+  },
+  {
+    "name": "Bernese Mountain Dog",
+    "breed_group_id": 5
+  },
+  {
+    "name": "Bichon Frise",
+    "breed_group_id": 2
+  },
+  {
+    "name": "Biewer Terrier",
+    "breed_group_id": 2
+  },
+  {
+    "name": "Black and Tan Coonhound",
+    "breed_group_id": 3
+  },
+  {
+    "name": "Black Mouth Cur",
+    "breed_group_id": 5
+  },
+  {
+    "name": "Black Russian Terrier",
+    "breed_group_id": 5
+  },
+  {
+    "name": "Bloodhound",
+    "breed_group_id": 3
+  },
+  {
+    "name": "Blue Lacy",
+    "breed_group_id": 5
+  },
+  {
+    "name": "Bluetick Coonhound",
+    "breed_group_id": 3
+  },
+  {
+    "name": "Bocker",
+    "breed_group_id": 8
+  },
+  {
+    "name": "Boerboel",
+    "breed_group_id": 5
+  },
+  {
+    "name": "Boglen Terrier",
+    "breed_group_id": 8
+  },
+  {
+    "name": "Bohemian Shepherd",
+    "breed_group_id": 7
+  },
+  {
+    "name": "Bolognese",
+    "breed_group_id": 2
+  },
+  {
+    "name": "Borador",
+    "breed_group_id": 8
+  },
+  {
+    "name": "Border Collie",
+    "breed_group_id": 7
+  },
+  {
+    "name": "Border Sheepdog",
+    "breed_group_id": 7
+  },
+  {
+    "name": "Border Terrier",
+    "breed_group_id": 4
+  },
+  {
+    "name": "Bordoodle",
+    "breed_group_id": 8
+  },
+  {
+    "name": "Borzoi",
+    "breed_group_id": 3
+  },
+  {
+    "name": "BoShih",
+    "breed_group_id": 8
+  },
+  {
+    "name": "Bossie",
+    "breed_group_id": 8
+  },
+  {
+    "name": "Boston Boxer",
+    "breed_group_id": 8
+  },
+  {
+    "name": "Boston Terrier",
+    "breed_group_id": 2
+  },
+  {
+    "name": "Boston Terrier Pekingese Mix",
+    "breed_group_id": 8
+  },
+  {
+    "name": "Bouvier des Flandres",
+    "breed_group_id": 7
+  },
+  {
+    "name": "Boxador",
+    "breed_group_id": 8
+  },
+  {
+    "name": "Boxer",
+    "breed_group_id": 5
+  },
+  {
+    "name": "Boxerdoodle",
+    "breed_group_id": 8
+  },
+  {
+    "name": "Boxmatian",
+    "breed_group_id": 8
+  },
+  {
+    "name": "Boxweiler",
+    "breed_group_id": 8
+  },
+  {
+    "name": "Boykin Spaniel",
+    "breed_group_id": 6
+  },
+  {
+    "name": "Bracco Italiano",
+    "breed_group_id": 6
+  },
+  {
+    "name": "Braque du Bourbonnais",
+    "breed_group_id": 6
+  },
+  {
+    "name": "Briard",
+    "breed_group_id": 7
+  },
+  {
+    "name": "Brittany",
+    "breed_group_id": 6
+  },
+  {
+    "name": "Broholmer",
+    "breed_group_id": 5
+  },
+  {
+    "name": "Brussels Griffon",
+    "breed_group_id": 2
+  },
+  {
+    "name": "Bugg",
+    "breed_group_id": 8
+  },
+  {
+    "name": "Bull Arab",
+    "breed_group_id": 8
+  },
+  {
+    "name": "Bull-Pei",
+    "breed_group_id": 8
+  },
+  {
+    "name": "Bull Terrier",
+    "breed_group_id": 4
+  },
+  {
+    "name": "Bullador",
+    "breed_group_id": 8
+  },
+  {
+    "name": "Bullboxer Pit",
+    "breed_group_id": 8
+  },
+  {
+    "name": "Bulldog",
+    "breed_group_id": 2
+  },
+  {
+    "name": "Bullmastiff",
+    "breed_group_id": 5
+  },
+  {
+    "name": "Bullmatian",
+    "breed_group_id": 8
+  },
+  {
+    "name": "Cairn Terrier",
+    "breed_group_id": 4
+  },
+  {
+    "name": "Canaan Dog",
+    "breed_group_id": 7
+  },
+  {
+    "name": "Cane Corso",
+    "breed_group_id": 5
+  },
+  {
+    "name": "Cardigan Welsh Corgi",
+    "breed_group_id": 7
+  },
+  {
+    "name": "Carolina Dog",
+    "breed_group_id": 1
+  },
+  {
+    "name": "Catahoula Bulldog",
+    "breed_group_id": 8
+  },
+  {
+    "name": "Catahoula Leopard Dog",
+    "breed_group_id": 5
+  },
+  {
+    "name": "Caucasian Shepherd Dog",
+    "breed_group_id": 5
+  },
+  {
+    "name": "Cav-a-Jack",
+    "breed_group_id": 8
+  },
+  {
+    "name": "Cavachon",
+    "breed_group_id": 8
+  },
+  {
+    "name": "Cavador",
+    "breed_group_id": 8
+  },
+  {
+    "name": "Cavalier King Charles Spaniel",
+    "breed_group_id": 2
+  },
+  {
+    "name": "Cavapoo",
+    "breed_group_id": 8
+  },
+  {
+    "name": "Central Asian Shepherd Dog",
+    "breed_group_id": 5
+  },
+  {
+    "name": "Cesky Terrier",
+    "breed_group_id": 4
+  },
+  {
+    "name": "Chabrador",
+    "breed_group_id": 8
+  },
+  {
+    "name": "Cheagle",
+    "breed_group_id": 8
+  },
+  {
+    "name": "Chesapeake Bay Retriever",
+    "breed_group_id": 6
+  },
+  {
+    "name": "Chi Chi",
+    "breed_group_id": 8
+  },
+  {
+    "name": "Chi-Poo",
+    "breed_group_id": 8
+  },
+  {
+    "name": "Chigi",
+    "breed_group_id": 8
+  },
+  {
+    "name": "Chihuahua",
+    "breed_group_id": 2
+  },
+  {
+    "name": "Chilier",
+    "breed_group_id": 8
+  },
+  {
+    "name": "Chinese Crested",
+    "breed_group_id": 2
+  },
+  {
+    "name": "Chinese Shar-Pei",
+    "breed_group_id": 2
+  },
+  {
+    "name": "Chinook",
+    "breed_group_id": 5
+  },
+  {
+    "name": "Chion",
+    "breed_group_id": 8
+  },
+  {
+    "name": "Chipin",
+    "breed_group_id": 8
+  },
+  {
+    "name": "Chiweenie",
+    "breed_group_id": 8
+  },
+  {
+    "name": "Chorkie",
+    "breed_group_id": 8
+  },
+  {
+    "name": "Chow Chow",
+    "breed_group_id": 2
+  },
+  {
+    "name": "Chow Shepherd",
+    "breed_group_id": 8
+  },
+  {
+    "name": "Chug",
+    "breed_group_id": 8
+  },
+  {
+    "name": "Chusky",
+    "breed_group_id": 8
+  },
+  {
+    "name": "Cirneco dell’Etna",
+    "breed_group_id": 3
+  },
+  {
+    "name": "Clumber Spaniel",
+    "breed_group_id": 6
+  },
+  {
+    "name": "Cockalier",
+    "breed_group_id": 8
+  },
+  {
+    "name": "Cockapoo",
+    "breed_group_id": 8
+  },
+  {
+    "name": "Cocker Spaniel",
+    "breed_group_id": 6
+  },
+  {
+    "name": "Collie",
+    "breed_group_id": 7
+  },
+  {
+    "name": "Corgi Inu",
+    "breed_group_id": 8
+  },
+  {
+    "name": "Corgidor",
+    "breed_group_id": 8
+  },
+  {
+    "name": "Corman Shepherd",
+    "breed_group_id": 8
+  },
+  {
+    "name": "Coton de Tulear",
+    "breed_group_id": 2
+  },
+  {
+    "name": "Croatian Sheepdog",
+    "breed_group_id": 7
+  },
+  {
+    "name": "Curly-Coated Retriever",
+    "breed_group_id": 6
+  },
+  {
+    "name": "Dachsador",
+    "breed_group_id": 8
+  },
+  {
+    "name": "Dachshund",
+    "breed_group_id": 3
+  },
+  {
+    "name": "Dalmatian",
+    "breed_group_id": 2
+  },
+  {
+    "name": "Dandie Dinmont Terrier",
+    "breed_group_id": 4
+  },
+  {
+    "name": "Daniff",
+    "breed_group_id": 8
+  },
+  {
+    "name": "Danish-Swedish Farmdog",
+    "breed_group_id": 4
+  },
+  {
+    "name": "Deutscher Wachtelhund",
+    "breed_group_id": 6
+  },
+  {
+    "name": "Doberdor",
+    "breed_group_id": 8
+  },
+  {
+    "name": "Doberman Pinscher",
+    "breed_group_id": 5
+  },
+  {
+    "name": "Docker",
+    "breed_group_id": 8
+  },
+  {
+    "name": "Dogo Argentino",
+    "breed_group_id": 5
+  },
+  {
+    "name": "Dogue de Bordeaux",
+    "breed_group_id": 5
+  },
+  {
+    "name": "Dorgi",
+    "breed_group_id": 8
+  },
+  {
+    "name": "Dorkie",
+    "breed_group_id": 8
+  },
+  {
+    "name": "Doxiepoo",
+    "breed_group_id": 8
+  },
+  {
+    "name": "Doxle",
+    "breed_group_id": 8
+  },
+  {
+    "name": "Drentsche Patrijshond",
+    "breed_group_id": 6
+  },
+  {
+    "name": "Drever",
+    "breed_group_id": 3
+  },
+  {
+    "name": "Dutch Shepherd",
+    "breed_group_id": 7
+  },
+  {
+    "name": "English Cocker Spaniel",
+    "breed_group_id": 6
+  },
+  {
+    "name": "English Foxhound",
+    "breed_group_id": 3
+  },
+  {
+    "name": "English Setter",
+    "breed_group_id": 6
+  },
+  {
+    "name": "English Springer Spaniel",
+    "breed_group_id": 6
+  },
+  {
+    "name": "English Toy Spaniel",
+    "breed_group_id": 2
+  },
+  {
+    "name": "Entlebucher Mountain Dog",
+    "breed_group_id": 7
+  },
+  {
+    "name": "Estrela Mountain Dog",
+    "breed_group_id": 5
+  },
+  {
+    "name": "Eurasier",
+    "breed_group_id": 2
+  },
+  {
+    "name": "Field Spaniel",
+    "breed_group_id": 6
+  },
+  {
+    "name": "Fila Brasileiro",
+    "breed_group_id": 5
+  },
+  {
+    "name": "Finnish Lapphund",
+    "breed_group_id": 7
+  },
+  {
+    "name": "Finnish Spitz",
+    "breed_group_id": 3
+  },
+  {
+    "name": "Flat-Coated Retriever",
+    "breed_group_id": 6
+  },
+  {
+    "name": "Fox Terrier",
+    "breed_group_id": 4
+  },
+  {
+    "name": "French Bulldog",
+    "breed_group_id": 2
+  },
+  {
+    "name": "French Bullhuahua",
+    "breed_group_id": 8
+  },
+  {
+    "name": "French Spaniel",
+    "breed_group_id": 6
+  },
+  {
+    "name": "Frenchton",
+    "breed_group_id": 8
+  },
+  {
+    "name": "Frengle",
+    "breed_group_id": 8
+  },
+  {
+    "name": "German Longhaired Pointer",
+    "breed_group_id": 6
+  },
+  {
+    "name": "German Pinscher",
+    "breed_group_id": 5
+  },
+  {
+    "name": "German Shepherd Dog",
+    "breed_group_id": 7
+  },
+  {
+    "name": "German Shepherd Pit Bull",
+    "breed_group_id": 8
+  },
+  {
+    "name": "German Shepherd Rottweiler Mix",
+    "breed_group_id": 8
+  },
+  {
+    "name": "German Sheprador",
+    "breed_group_id": 8
+  },
+  {
+    "name": "German Shorthaired Pointer",
+    "breed_group_id": 6
+  },
+  {
+    "name": "German Spitz",
+    "breed_group_id": 2
+  },
+  {
+    "name": "German Wirehaired Pointer",
+    "breed_group_id": 6
+  },
+  {
+    "name": "Giant Schnauzer",
+    "breed_group_id": 5
+  },
+  {
+    "name": "Glen of Imaal Terrier",
+    "breed_group_id": 4
+  },
+  {
+    "name": "Goberian",
+    "breed_group_id": 8
+  },
+  {
+    "name": "Goldador",
+    "breed_group_id": 8
+  },
+  {
+    "name": "Golden Cocker Retriever",
+    "breed_group_id": 8
+  },
+  {
+    "name": "Golden Mountain Dog",
+    "breed_group_id": 8
+  },
+  {
+    "name": "Golden Retriever",
+    "breed_group_id": 6
+  },
+  {
+    "name": "Golden Retriever Corgi",
+    "breed_group_id": 8
+  },
+  {
+    "name": "Golden Shepherd",
+    "breed_group_id": 8
+  },
+  {
+    "name": "Goldendoodle",
+    "breed_group_id": 8
+  },
+  {
+    "name": "Gollie",
+    "breed_group_id": 8
+  },
+  {
+    "name": "Gordon Setter",
+    "breed_group_id": 6
+  },
+  {
+    "name": "Great Dane",
+    "breed_group_id": 5
+  },
+  {
+    "name": "Great Pyrenees",
+    "breed_group_id": 5
+  },
+  {
+    "name": "Greater Swiss Mountain Dog",
+    "breed_group_id": 5
+  },
+  {
+    "name": "Greyador",
+    "breed_group_id": 8
+  },
+  {
+    "name": "Greyhound",
+    "breed_group_id": 3
+  },
+  {
+    "name": "Hamiltonstovare",
+    "breed_group_id": 3
+  },
+  {
+    "name": "Hanoverian Scenthound",
+    "breed_group_id": 3
+  },
+  {
+    "name": "Harrier",
+    "breed_group_id": 3
+  },
+  {
+    "name": "Havanese",
+    "breed_group_id": 2
+  },
+  {
+    "name": "Havapoo",
+    "breed_group_id": 8
+  },
+  {
+    "name": "Hokkaido",
+    "breed_group_id": 5
+  },
+  {
+    "name": "Horgi",
+    "breed_group_id": 8
+  },
+  {
+    "name": "Hovawart",
+    "breed_group_id": 5
+  },
+  {
+    "name": "Huskita",
+    "breed_group_id": 8
+  },
+  {
+    "name": "Huskydoodle",
+    "breed_group_id": 8
+  },
+  {
+    "name": "Ibizan Hound",
+    "breed_group_id": 3
+  },
+  {
+    "name": "Icelandic Sheepdog",
+    "breed_group_id": 7
+  },
+  {
+    "name": "Irish Red And White Setter",
+    "breed_group_id": 6
+  },
+  {
+    "name": "Irish Setter",
+    "breed_group_id": 6
+  },
+  {
+    "name": "Irish Terrier",
+    "breed_group_id": 4
+  },
+  {
+    "name": "Irish Water Spaniel",
+    "breed_group_id": 6
+  },
+  {
+    "name": "Irish Wolfhound",
+    "breed_group_id": 3
+  },
+  {
+    "name": "Italian Greyhound",
+    "breed_group_id": 2
+  },
+  {
+    "name": "Jack-A-Poo",
+    "breed_group_id": 8
+  },
+  {
+    "name": "Jack Chi",
+    "breed_group_id": 8
+  },
+  {
+    "name": "Jack Russell Terrier",
+    "breed_group_id": 4
+  },
+  {
+    "name": "Jackshund",
+    "breed_group_id": 8
+  },
+  {
+    "name": "Japanese Chin",
+    "breed_group_id": 2
+  },
+  {
+    "name": "Japanese Spitz",
+    "breed_group_id": 2
+  },
+  {
+    "name": "Korean Jindo Dog",
+    "breed_group_id": 5
+  },
+  {
+    "name": "Kai Ken",
+    "breed_group_id": 5
+  },
+  {
+    "name": "Karelian Bear Dog",
+    "breed_group_id": 5
+  },
+  {
+    "name": "Keeshond",
+    "breed_group_id": 2
+  },
+  {
+    "name": "Kerry Blue Terrier",
+    "breed_group_id": 4
+  },
+  {
+    "name": "King Shepherd",
+    "breed_group_id": 7
+  },
+  {
+    "name": "Kishu Ken",
+    "breed_group_id": 5
+  },
+  {
+    "name": "Komondor",
+    "breed_group_id": 7
+  },
+  {
+    "name": "Kooikerhondje",
+    "breed_group_id": 6
+  },
+  {
+    "name": "Kuvasz",
+    "breed_group_id": 7
+  },
+  {
+    "name": "Kyi-Leo",
+    "breed_group_id": 2
+  },
+  {
+    "name": "Lab Pointer",
+    "breed_group_id": 8
+  },
+  {
+    "name": "Labernese",
+    "breed_group_id": 8
+  },
+  {
+    "name": "Labmaraner",
+    "breed_group_id": 8
+  },
+  {
+    "name": "Labrabull",
+    "breed_group_id": 8
+  },
+  {
+    "name": "Labradane",
+    "breed_group_id": 8
+  },
+  {
+    "name": "Labradoodle",
+    "breed_group_id": 8
+  },
+  {
+    "name": "Labrador Retriever",
+    "breed_group_id": 6
+  },
+  {
+    "name": "Labrastaff",
+    "breed_group_id": 8
+  },
+  {
+    "name": "Labsky",
+    "breed_group_id": 8
+  },
+  {
+    "name": "Lagotto Romagnolo",
+    "breed_group_id": 6
+  },
+  {
+    "name": "Lakeland Terrier",
+    "breed_group_id": 4
+  },
+  {
+    "name": "Lancashire Heeler",
+    "breed_group_id": 7
+  },
+  {
+    "name": "Leonberger",
+    "breed_group_id": 5
+  },
+  {
+    "name": "Lhasa Apso",
+    "breed_group_id": 2
+  },
+  {
+    "name": "Lhasapoo",
+    "breed_group_id": 8
+  },
+  {
+    "name": "Lowchen",
+    "breed_group_id": 2
+  },
+  {
+    "name": "Maltese",
+    "breed_group_id": 2
+  },
+  {
+    "name": "Maltese Shih Tzu",
+    "breed_group_id": 8
+  },
+  {
+    "name": "Maltipoo",
+    "breed_group_id": 8
+  },
+  {
+    "name": "Manchester Terrier",
+    "breed_group_id": 4
+  },
+  {
+    "name": "Maremma Sheepdog",
+    "breed_group_id": 7
+  },
+  {
+    "name": "Mastador",
+    "breed_group_id": 8
+  },
+  {
+    "name": "Mastiff",
+    "breed_group_id": 5
+  },
+  {
+    "name": "Miniature Pinscher",
+    "breed_group_id": 2
+  },
+  {
+    "name": "Miniature Schnauzer",
+    "breed_group_id": 4
+  },
+  {
+    "name": "Morkie",
+    "breed_group_id": 8
+  },
+  {
+    "name": "Mountain Cur",
+    "breed_group_id": 5
+  },
+  {
+    "name": "Mountain Feist",
+    "breed_group_id": 4
+  },
+  {
+    "name": "Mudi",
+    "breed_group_id": 7
+  },
+  {
+    "name": "Mutt (Mixed)",
+    "breed_group_id": 1
+  },
+  {
+    "name": "Neapolitan Mastiff",
+    "breed_group_id": 5
+  },
+  {
+    "name": "Newfoundland",
+    "breed_group_id": 5
+  },
+  {
+    "name": "Norfolk Terrier",
+    "breed_group_id": 4
+  },
+  {
+    "name": "Northern Inuit Dog",
+    "breed_group_id": 8
+  },
+  {
+    "name": "Norwegian Buhund",
+    "breed_group_id": 7
+  },
+  {
+    "name": "Norwegian Elkhound",
+    "breed_group_id": 3
+  },
+  {
+    "name": "Norwegian Lundehund",
+    "breed_group_id": 3
+  },
+  {
+    "name": "Norwich Terrier",
+    "breed_group_id": 4
+  },
+  {
+    "name": "Nova Scotia Duck Tolling Retriever",
+    "breed_group_id": 6
+  },
+  {
+    "name": "Old English Sheepdog",
+    "breed_group_id": 7
+  },
+  {
+    "name": "Otterhound",
+    "breed_group_id": 3
+  },
+  {
+    "name": "Papillon",
+    "breed_group_id": 2
+  },
+  {
+    "name": "Papipoo",
+    "breed_group_id": 8
+  },
+  {
+    "name": "Patterdale Terrier",
+    "breed_group_id": 4
+  },
+  {
+    "name": "Peekapoo",
+    "breed_group_id": 8
+  },
+  {
+    "name": "Pekingese",
+    "breed_group_id": 2
+  },
+  {
+    "name": "Pembroke Welsh Corgi",
+    "breed_group_id": 7
+  },
+  {
+    "name": "Petit Basset Griffon Vendéen",
+    "breed_group_id": 3
+  },
+  {
+    "name": "Pharaoh Hound",
+    "breed_group_id": 3
+  },
+  {
+    "name": "Pitsky",
+    "breed_group_id": 8
+  },
+  {
+    "name": "Plott",
+    "breed_group_id": 3
+  },
+  {
+    "name": "Pocket Beagle",
+    "breed_group_id": 3
+  },
+  {
+    "name": "Pointer",
+    "breed_group_id": 6
+  },
+  {
+    "name": "Polish Lowland Sheepdog",
+    "breed_group_id": 7
+  },
+  {
+    "name": "Pomapoo",
+    "breed_group_id": 8
+  },
+  {
+    "name": "Pomchi",
+    "breed_group_id": 8
+  },
+  {
+    "name": "Pomeagle",
+    "breed_group_id": 8
+  },
+  {
+    "name": "Pomeranian",
+    "breed_group_id": 2
+  },
+  {
+    "name": "Pomsky",
+    "breed_group_id": 8
+  },
+  {
+    "name": "Poochon",
+    "breed_group_id": 8
+  },
+  {
+    "name": "Poodle",
+    "breed_group_id": 2
+  },
+  {
+    "name": "Portuguese Podengo Pequeno",
+    "breed_group_id": 3
+  },
+  {
+    "name": "Portuguese Pointer",
+    "breed_group_id": 6
+  },
+  {
+    "name": "Portuguese Sheepdog",
+    "breed_group_id": 7
+  },
+  {
+    "name": "Portuguese Water Dog",
+    "breed_group_id": 6
+  },
+  {
+    "name": "Pudelpointer",
+    "breed_group_id": 6
+  },
+  {
+    "name": "Pug",
+    "breed_group_id": 2
+  },
+  {
+    "name": "Pugalier",
+    "breed_group_id": 8
+  },
+  {
+    "name": "Puggle",
+    "breed_group_id": 8
+  },
+  {
+    "name": "Puginese",
+    "breed_group_id": 8
+  },
+  {
+    "name": "Puli",
+    "breed_group_id": 7
+  },
+  {
+    "name": "Pyredoodle",
+    "breed_group_id": 8
+  },
+  {
+    "name": "Pyrenean Mastiff",
+    "breed_group_id": 5
+  },
+  {
+    "name": "Pyrenean Shepherd",
+    "breed_group_id": 7
+  },
+  {
+    "name": "Rat Terrier",
+    "breed_group_id": 4
+  },
+  {
+    "name": "Redbone Coonhound",
+    "breed_group_id": 3
+  },
+  {
+    "name": "Rhodesian Ridgeback",
+    "breed_group_id": 3
+  },
+  {
+    "name": "Rottador",
+    "breed_group_id": 8
+  },
+  {
+    "name": "Rottle",
+    "breed_group_id": 8
+  },
+  {
+    "name": "Rottweiler",
+    "breed_group_id": 5
+  },
+  {
+    "name": "Saint Berdoodle",
+    "breed_group_id": 8
+  },
+  {
+    "name": "Saint Bernard",
+    "breed_group_id": 5
+  },
+  {
+    "name": "Saluki",
+    "breed_group_id": 3
+  },
+  {
+    "name": "Samoyed",
+    "breed_group_id": 5
+  },
+  {
+    "name": "Samusky",
+    "breed_group_id": 8
+  },
+  {
+    "name": "Schipperke",
+    "breed_group_id": 2
+  },
+  {
+    "name": "Schnoodle",
+    "breed_group_id": 8
+  },
+  {
+    "name": "Scottish Deerhound",
+    "breed_group_id": 3
+  },
+  {
+    "name": "Scottish Terrier",
+    "breed_group_id": 4
+  },
+  {
+    "name": "Sealyham Terrier",
+    "breed_group_id": 4
+  },
+  {
+    "name": "Sheepadoodle",
+    "breed_group_id": 8
+  },
+  {
+    "name": "Shepsky",
+    "breed_group_id": 8
+  },
+  {
+    "name": "Shetland Sheepdog",
+    "breed_group_id": 7
+  },
+  {
+    "name": "Shiba Inu",
+    "breed_group_id": 2
+  },
+  {
+    "name": "Shichon",
+    "breed_group_id": 8
+  },
+  {
+    "name": "Shih-Poo",
+    "breed_group_id": 8
+  },
+  {
+    "name": "Shih Tzu",
+    "breed_group_id": 2
+  },
+  {
+    "name": "Shikoku",
+    "breed_group_id": 5
+  },
+  {
+    "name": "Shiloh Shepherd",
+    "breed_group_id": 7
+  },
+  {
+    "name": "Shiranian",
+    "breed_group_id": 8
+  },
+  {
+    "name": "Shollie",
+    "breed_group_id": 8
+  },
+  {
+    "name": "Shorkie",
+    "breed_group_id": 8
+  },
+  {
+    "name": "Siberian Husky",
+    "breed_group_id": 5
+  },
+  {
+    "name": "Silken Windhound",
+    "breed_group_id": 3
+  },
+  {
+    "name": "Silky Terrier",
+    "breed_group_id": 2
+  },
+  {
+    "name": "Skye Terrier",
+    "breed_group_id": 4
+  },
+  {
+    "name": "Sloughi",
+    "breed_group_id": 3
+  },
+  {
+    "name": "Small Munsterlander Pointer",
+    "breed_group_id": 6
+  },
+  {
+    "name": "Soft Coated Wheaten Terrier",
+    "breed_group_id": 4
+  },
+  {
+    "name": "Spanish Mastiff",
+    "breed_group_id": 5
+  },
+  {
+    "name": "Spinone Italiano",
+    "breed_group_id": 6
+  },
+  {
+    "name": "Springador",
+    "breed_group_id": 8
+  },
+  {
+    "name": "Stabyhoun",
+    "breed_group_id": 6
+  },
+  {
+    "name": "Staffordshire Bull Terrier",
+    "breed_group_id": 4
+  },
+  {
+    "name": "Staffy Bull Bullmastiff",
+    "breed_group_id": 8
+  },
+  {
+    "name": "Standard Schnauzer",
+    "breed_group_id": 5
+  },
+  {
+    "name": "Sussex Spaniel",
+    "breed_group_id": 6
+  },
+  {
+    "name": "Swedish Lapphund",
+    "breed_group_id": 7
+  },
+  {
+    "name": "Swedish Vallhund",
+    "breed_group_id": 7
+  },
+  {
+    "name": "Taiwan Dog",
+    "breed_group_id": 1
+  },
+  {
+    "name": "Terripoo",
+    "breed_group_id": 8
+  },
+  {
+    "name": "Texas Heeler",
+    "breed_group_id": 8
+  },
+  {
+    "name": "Thai Ridgeback",
+    "breed_group_id": 5
+  },
+  {
+    "name": "Tibetan Mastiff",
+    "breed_group_id": 5
+  },
+  {
+    "name": "Tibetan Spaniel",
+    "breed_group_id": 2
+  },
+  {
+    "name": "Tibetan Terrier",
+    "breed_group_id": 2
+  },
+  {
+    "name": "Toy Fox Terrier",
+    "breed_group_id": 2
+  },
+  {
+    "name": "Transylvanian Hound",
+    "breed_group_id": 3
+  },
+  {
+    "name": "Treeing Tennessee Brindle",
+    "breed_group_id": 3
+  },
+  {
+    "name": "Treeing Walker Coonhound",
+    "breed_group_id": 3
+  },
+  {
+    "name": "Valley Bulldog",
+    "breed_group_id": 8
+  },
+  {
+    "name": "Vizsla",
+    "breed_group_id": 6
+  },
+  {
+    "name": "Weimaraner",
+    "breed_group_id": 6
+  },
+  {
+    "name": "Welsh Springer Spaniel",
+    "breed_group_id": 6
+  },
+  {
+    "name": "Welsh Terrier",
+    "breed_group_id": 4
+  },
+  {
+    "name": "West Highland White Terrier",
+    "breed_group_id": 4
+  },
+  {
+    "name": "Westiepoo",
+    "breed_group_id": 8
+  },
+  {
+    "name": "Whippet",
+    "breed_group_id": 3
+  },
+  {
+    "name": "Whoodle",
+    "breed_group_id": 8
+  },
+  {
+    "name": "Wirehaired Pointing Griffon",
+    "breed_group_id": 6
+  },
+  {
+    "name": "Xoloitzcuintli",
+    "breed_group_id": 2
+  },
+  {
+    "name": "Yakutian Laika",
+    "breed_group_id": 5
+  },
+  {
+    "name": "Yorkipoo",
+    "breed_group_id": 8
+  },
+  {
+    "name": "Yorkshire Terrier",
+    "breed_group_id": 2
+  }
+]

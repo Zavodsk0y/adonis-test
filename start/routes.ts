@@ -12,6 +12,7 @@ import { middleware } from '#start/kernel'
 
 const UsersController = () => import('#controllers/user/users_controller')
 const OauthController = () => import('#controllers/user/oauth_controller')
+const BreedController = () => import('#controllers/breed/breeds_controller')
 
 router.get('/', async () => {
   return {
@@ -37,3 +38,5 @@ router.get('/:provider/redirect', [OauthController, 'redirect']).where('provider
 router
   .get('/:provider/auth/callback', [OauthController, 'callback'])
   .where('provider', /github|google/)
+
+router.get('/breeds', [BreedController, 'index'])
