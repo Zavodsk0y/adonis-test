@@ -1,0 +1,437 @@
+openapi: '3.0.0'
+info:
+  title: 'AdonisTest'
+  version: '0.0.1'
+  description: "I'm just learning this framework"
+components:
+  responses:
+    Forbidden:
+      description: 'Access token is missing or invalid'
+    Accepted:
+      description: 'The request was accepted'
+    Created:
+      description: 'The resource has been created'
+    NotFound:
+      description: 'The resource has been created'
+    NotAcceptable:
+      description: 'The resource has been created'
+  securitySchemes:
+    BearerAuth:
+      type: 'http'
+      scheme: 'bearer'
+    BasicAuth:
+      type: 'http'
+      scheme: 'basic'
+    ApiKeyAuth:
+      type: 'apiKey'
+      in: 'header'
+      name: 'X-API-Key'
+  schemas:
+    Any:
+      description: 'Any JSON object not defined as schema'
+    PaginationMeta:
+      type: 'object'
+      properties:
+        total:
+          type: 'number'
+          example: 100
+          nullable: false
+        page:
+          type: 'number'
+          example: 2
+          nullable: false
+        perPage:
+          type: 'number'
+          example: 10
+          nullable: false
+        currentPage:
+          type: 'number'
+          example: 3
+          nullable: false
+        lastPage:
+          type: 'number'
+          example: 10
+          nullable: false
+        firstPage:
+          type: 'number'
+          example: 1
+          nullable: false
+        lastPageUrl:
+          type: 'string'
+          example: '/?page=10'
+          nullable: false
+        firstPageUrl:
+          type: 'string'
+          example: '/?page=1'
+          nullable: false
+        nextPageUrl:
+          type: 'string'
+          example: '/?page=6'
+          nullable: false
+        previousPageUrl:
+          type: 'string'
+          example: '/?page=5'
+          nullable: false
+    Breed:
+      type: 'object'
+      required: []
+      properties:
+        id:
+          type: 'number'
+          example: 706
+        breed_group:
+          $ref: '#/components/schemas/BreedGroup'
+          example: null
+        name:
+          type: 'string'
+          example: 'John Doe'
+        serialize_cherry_pick:
+          $ref: '#/components/schemas/CherryPick)'
+          example: null
+      description: 'Breed (Model)'
+    BreedGroup:
+      type: 'object'
+      required: []
+      properties:
+        id:
+          type: 'number'
+          example: 305
+        name:
+          type: 'string'
+          example: 'John Doe'
+        breeds:
+          type: 'array'
+          items:
+            $ref: '#/components/schemas/Breed'
+            example: null
+        created_at:
+          type: 'string'
+          example: '2021-03-23T16:13:08.489+01:00'
+          format: 'date-time'
+        updated_at:
+          type: 'string'
+          example: '2021-03-23T16:13:08.489+01:00'
+          format: 'date-time'
+      description: 'BreedGroup (Model)'
+    User:
+      type: 'object'
+      required: []
+      properties:
+        id:
+          type: 'number'
+          example: 58
+        full_name:
+          type: 'string'
+          example: 'John Doe'
+        email:
+          type: 'string'
+          example: 'johndoe@example.com'
+          format: 'email'
+        created_at:
+          type: 'string'
+          example: '2021-03-23T16:13:08.489+01:00'
+          format: 'date-time'
+        updated_at:
+          type: 'string'
+          example: '2021-03-23T16:13:08.489+01:00'
+          format: 'date-time'
+        is_verified:
+          type: 'boolean'
+          example: true
+        email_token_confirmation:
+          type: 'string'
+          example: 'Lorem Ipsum'
+        provider:
+          type: 'string'
+          example: 'Lorem Ipsum'
+        provider_id:
+          type: 'string'
+          example: 'Lorem Ipsum'
+      description: 'User (Model)'
+    changeEmailValidator:
+      type: 'object'
+      properties:
+        email:
+          type: 'string'
+          example: 'Lorem Ipsum'
+          required: true
+      example:
+        email: 'Lorem Ipsum'
+      description: 'changeEmailValidator (Validator)'
+    changeFullNameValidator:
+      type: 'object'
+      properties:
+        fullName:
+          type: 'string'
+          example: 'Lorem Ipsum'
+          pattern: '/^[А-яёЁ -]*$/u'
+          required: true
+      example:
+        fullName: 'Lorem Ipsum'
+      description: 'changeFullNameValidator (Validator)'
+    changePasswordValidator:
+      type: 'object'
+      properties:
+        old_password:
+          type: 'string'
+          example: 'Lorem Ipsum'
+          required: true
+        new_password:
+          type: 'string'
+          example: 'Lorem Ipsum'
+          pattern: "/^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,}$/"
+          required: true
+      example:
+        old_password: 'Lorem Ipsum'
+        new_password: 'Lorem Ipsum'
+      description: 'changePasswordValidator (Validator)'
+    createUserValidator:
+      type: 'object'
+      properties:
+        email:
+          type: 'string'
+          example: 'Lorem Ipsum'
+          required: true
+        fullName:
+          type: 'string'
+          example: 'Lorem Ipsum'
+          pattern: '/^[А-яёЁ -]*$/u'
+          required: true
+        password:
+          type: 'string'
+          example: 'Lorem Ipsum'
+          pattern: "/^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,}$/"
+          required: true
+          minLength: 8
+      example:
+        email: 'Lorem Ipsum'
+        fullName: 'Lorem Ipsum'
+        password: 'Lorem Ipsum'
+      description: 'createUserValidator (Validator)'
+    loginUserValidator:
+      type: 'object'
+      properties:
+        email:
+          type: 'string'
+          example: 'Lorem Ipsum'
+          required: true
+        password:
+          type: 'string'
+          example: 'Lorem Ipsum'
+          pattern: "/^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,}$/"
+          required: true
+          minLength: 8
+      example:
+        email: 'Lorem Ipsum'
+        password: 'Lorem Ipsum'
+      description: 'loginUserValidator (Validator)'
+paths:
+  /:
+    get:
+      summary: 'route'
+      description: "\n\n __ - ****"
+      parameters: []
+      tags: []
+      responses:
+        200:
+          description: 'OK'
+          content:
+            application/json: {}
+      security: []
+  /signup:
+    post:
+      summary: ' (signup)'
+      description: "Returns **201** (Created) as **application/json**\n\n _app/controllers/user/users_controller.ts_ - **signup**"
+      parameters: []
+      tags:
+        - 'USER'
+      responses:
+        201:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+              example:
+                id: 58
+                full_name: 'John Doe'
+                email: 'johndoe@example.com'
+                created_at: '2021-03-23T16:13:08.489+01:00'
+                updated_at: '2021-03-23T16:13:08.489+01:00'
+                is_verified: true
+                email_token_confirmation: 'Lorem Ipsum'
+                provider: 'Lorem Ipsum'
+                provider_id: 'Lorem Ipsum'
+          description: 'Returns **201** (Created) as **application/json**'
+      security: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/createUserValidator'
+            example:
+              email: 'Lorem Ipsum'
+              fullName: 'Lorem Ipsum'
+              password: 'Lorem Ipsum'
+  /login:
+    post:
+      summary: ' (login)'
+      description: "\n\n _app/controllers/user/users_controller.ts_ - **login**"
+      parameters: []
+      tags:
+        - ''
+      responses:
+        201:
+          description: 'Created'
+          content:
+            application/json: {}
+      security: []
+      requestBody:
+        content:
+          application/json: {}
+  /verify-email/{token}:
+    get:
+      summary: ' (emailVerify)'
+      description: "\n\n _app/controllers/user/users_controller.ts_ - **emailVerify**"
+      parameters:
+        - in: 'path'
+          name: 'token'
+          schema:
+            type: 'string'
+          required: true
+      tags:
+        - ':TOKEN'
+      responses:
+        200:
+          description: 'OK'
+          content:
+            application/json: {}
+      security: []
+  /users:
+    get:
+      summary: 'Get a list of  (index)'
+      description: "\n\n _app/controllers/user/users_controller.ts_ - **index**"
+      parameters: []
+      tags:
+        - ''
+      responses:
+        401:
+          description: 'Returns **401** (Unauthorized)'
+        403:
+          description: 'Returns **403** (Forbidden)'
+      security:
+        - BearerAuth:
+            - 'access'
+  /users/me/change-full-name:
+    patch:
+      summary: ' (changeFullName)'
+      description: "\n\n _app/controllers/user/users_controller.ts_ - **changeFullName**"
+      parameters: []
+      tags:
+        - 'ME'
+      responses:
+        401:
+          description: 'Returns **401** (Unauthorized)'
+        403:
+          description: 'Returns **403** (Forbidden)'
+      security:
+        - BearerAuth:
+            - 'access'
+      requestBody:
+        content:
+          application/json: {}
+  /users/me/change-email:
+    patch:
+      summary: ' (changeEmail)'
+      description: "\n\n _app/controllers/user/users_controller.ts_ - **changeEmail**"
+      parameters: []
+      tags:
+        - 'ME'
+      responses:
+        401:
+          description: 'Returns **401** (Unauthorized)'
+        403:
+          description: 'Returns **403** (Forbidden)'
+      security:
+        - BearerAuth:
+            - 'access'
+      requestBody:
+        content:
+          application/json: {}
+  /users/me/change-password:
+    patch:
+      summary: ' (changePassword)'
+      description: "\n\n _app/controllers/user/users_controller.ts_ - **changePassword**"
+      parameters: []
+      tags:
+        - 'ME'
+      responses:
+        401:
+          description: 'Returns **401** (Unauthorized)'
+        403:
+          description: 'Returns **403** (Forbidden)'
+      security:
+        - BearerAuth:
+            - 'access'
+      requestBody:
+        content:
+          application/json: {}
+  /{provider}/redirect:
+    get:
+      summary: ' (redirect)'
+      description: "\n\n _app/controllers/user/oauth_controller.ts_ - **redirect**"
+      parameters:
+        - in: 'path'
+          name: 'provider'
+          schema:
+            type: 'string'
+          required: true
+      tags:
+        - 'REDIRECT'
+      responses:
+        200:
+          description: 'OK'
+          content:
+            application/json: {}
+      security: []
+  /{provider}/auth/callback:
+    get:
+      summary: ' (callback)'
+      description: "\n\n _app/controllers/user/oauth_controller.ts_ - **callback**"
+      parameters:
+        - in: 'path'
+          name: 'provider'
+          schema:
+            type: 'string'
+          required: true
+      tags:
+        - 'AUTH'
+      responses:
+        200:
+          description: 'OK'
+          content:
+            application/json: {}
+      security: []
+  /breeds:
+    get:
+      summary: 'Get a list of  (index)'
+      description: "\n\n _app/controllers/breed/breeds_controller.ts_ - **index**"
+      parameters: []
+      tags:
+        - ''
+      responses:
+        200:
+          description: 'OK'
+          content:
+            application/json: {}
+      security: []
+tags:
+  - name: 'USER'
+    description: 'Everything related to USER'
+  - name: ':TOKEN'
+    description: 'Everything related to :TOKEN'
+  - name: 'ME'
+    description: 'Everything related to ME'
+  - name: 'REDIRECT'
+    description: 'Everything related to REDIRECT'
+  - name: 'AUTH'
+    description: 'Everything related to AUTH'

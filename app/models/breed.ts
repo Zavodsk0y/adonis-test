@@ -25,7 +25,7 @@ export default class Breed extends BaseModel {
 
   public serialize(cherryPick?: CherryPick): ModelObject {
     const serialized = super.serialize(cherryPick)
-    if (serialized.breedGroup) serialized.breedGroup = serialized.breedGroup.name
+    serialized.breedGroup = serialized.breedGroup ? serialized.breedGroup.name : null
     return serialized
   }
 }

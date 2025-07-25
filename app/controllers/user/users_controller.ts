@@ -16,6 +16,12 @@ import User from '#models/user'
 export default class UsersController {
   constructor(protected userService: UserService) {}
 
+  /**
+   * @signup
+   * @tag User
+   * @requestBody <createUserValidator>
+   * @responseBody 201 - {"message": "User created successfully, check your email for account verification", "user": <User>}
+   */
   async signup(ctx: HttpContext) {
     const payload = await ctx.request.validateUsing(createUserValidator)
     const user = await this.userService.create(payload)
