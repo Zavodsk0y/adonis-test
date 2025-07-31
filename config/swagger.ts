@@ -8,7 +8,7 @@ export default {
   description: "I'm just learning this framework",
   tagIndex: 2,
   productionEnv: 'development',
-  snakeCase: true,
+  snakeCase: false,
 
   debug: true,
   ignore: ['/swagger', '/docs'],

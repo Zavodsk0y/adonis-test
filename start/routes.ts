@@ -14,7 +14,20 @@ import swagger from '#config/swagger'
 
 const UsersController = () => import('#controllers/user/users_controller')
 const OauthController = () => import('#controllers/user/oauth_controller')
-const BreedController = () => import('#controllers/breed/breeds_controller')
+const ProductsController = () => import('#controllers/product/products_controller')
+const CategoriesController = () => import('#controllers/category/categories_controller')
+const GetCategoriesWithLastThreeProducts = () =>
+  import('#controllers/category/get_categories_with_last_three_products')
+const UpdateProductStatusController = () =>
+  import('#controllers/product/update_product_status_controller')
+const AddProductToCartController = () =>
+  import('#controllers/product/add_product_to_cart_controller')
+const GetProductsInCartController = () =>
+  import('#controllers/product/get_products_in_cart_controller')
+const AttachCategoriesToProductController = () =>
+  import('#controllers/product/attach_categories_to_product_controller')
+const DetachCategoriesFromProductController = () =>
+  import('#controllers/product/detach_categories_from_product_controller')
 
 router.get('/swagger', async () => {
   return AutoSwagger.default.docs(router.toJSON(), swagger)
@@ -31,6 +44,26 @@ router.get('/', async () => {
     hello: 'world',
   }
 })
+
+router.resource('products', ProductsController)
+router
+  .group(() => {
+    router.post('/update-status/:id', [UpdateProductStatusController])
+    router.post('/attach-categories/:id', [AttachCategoriesToProductController])
+    router.post('/detach-categories/:id', [DetachCategoriesFromProductController])
+  })
+  .prefix('/products')
+
+router
+  .group(() => {
+    router.post('/:id', [AddProductToCartController])
+    router.get('', [GetProductsInCartController])
+  })
+  .prefix('/cart')
+  .use(middleware.auth({ guards: ['api'] }))
+
+router.resource('categories', CategoriesController)
+router.get('categories-with-last-products', [GetCategoriesWithLastThreeProducts])
 
 router.post('signup', [UsersController, 'signup'])
 router.post('login', [UsersController, 'login'])
@@ -50,5 +83,3 @@ router.get('/:provider/redirect', [OauthController, 'redirect']).where('provider
 router
   .get('/:provider/auth/callback', [OauthController, 'callback'])
   .where('provider', /github|google/)
-
-router.get('/breeds', [BreedController, 'index'])

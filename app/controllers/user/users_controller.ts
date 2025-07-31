@@ -31,12 +31,24 @@ export default class UsersController {
     })
   }
 
+  /**
+   * @login
+   * @tag User
+   * @requestBody <loginUserValidator>
+   * @responseBody 200 - {"message": "User login successfully", "token": "xxxxxx"}
+   */
   async login(ctx: HttpContext) {
     const payload = await ctx.request.validateUsing(loginUserValidator)
     const token = await this.userService.login(payload)
     return { message: 'User login successfully', token }
   }
 
+  /**
+   * @emailVerify
+   * @tag User
+   * @paramPath token - The token of the verify - @type(string)
+   * @responseBody 200 - {"message": "Email confirmed successfully"}
+   */
   async emailVerify({ params }: HttpContext) {
     const token = params.token
     await this.userService.verify(token)
@@ -47,6 +59,12 @@ export default class UsersController {
     return await User.all()
   }
 
+  /**
+   * @changeFullName
+   * @tag User
+   * @requestBody <changeFullNameValidator>
+   * @responseBody 200 - {"message": "Full name updated successfully", "user": "<User>"}
+   */
   async changeFullName(ctx: HttpContext) {
     const payload = await ctx.request.validateUsing(changeFullNameValidator)
     const user = ctx.auth.user!
@@ -54,6 +72,12 @@ export default class UsersController {
     return ctx.response.status(200).json({ message: 'Full name updated successfully', user })
   }
 
+  /**
+   * @changeEmail
+   * @tag User
+   * @requestBody <changeEmailValidator>
+   * @responseBody 200 - {"message": "Email updated successfully, check your email for verification", "user": "<User>"}
+   */
   async changeEmail(ctx: HttpContext) {
     const payload = await ctx.request.validateUsing(changeEmailValidator)
     const user = ctx.auth.user!
@@ -63,6 +87,12 @@ export default class UsersController {
       .json({ message: 'Email updated successfully, check your email for verification', user })
   }
 
+  /**
+   * @changePassword
+   * @tag User
+   * @requestBody <changePasswordValidator>
+   * @responseBody 200 - {"message": "Password updated", "user": "<User>"}
+   */
   async changePassword(ctx: HttpContext) {
     const payload = await ctx.request.validateUsing(changePasswordValidator)
     const user = ctx.auth.user!

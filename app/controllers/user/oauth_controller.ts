@@ -10,10 +10,22 @@ import { GoogleDriver } from '@adonisjs/ally/drivers/google'
 export default class OauthController {
   constructor(protected oauthService: OauthService) {}
 
+  /**
+   * @redirect
+   * @tag User
+   * @paramPath provider - The login provider to be used - @enum(google, github)
+   * @responseHeader 302 - Location: /provider/auth/callback
+   */
   async redirect({ ally, params }: HttpContext) {
     return ally.use(params.provider).redirect()
   }
 
+  /**
+   * @callback
+   * @tag User
+   * @paramPath provider - The login provider to be used - @enum(google, github)
+   * @responseBody 200 - {"user": "<User>", "token": "xxxxxx"}
+   */
   async callback({ ally, response, auth, params }: HttpContext) {
     const provider: GithubDriver | GoogleDriver = ally.use(params.provider)
 

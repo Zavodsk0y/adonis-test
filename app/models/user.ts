@@ -1,9 +1,11 @@
 import { DateTime } from 'luxon'
 import hash from '@adonisjs/core/services/hash'
 import { compose } from '@adonisjs/core/helpers'
-import { BaseModel, column } from '@adonisjs/lucid/orm'
+import { BaseModel, column, manyToMany } from '@adonisjs/lucid/orm'
 import { withAuthFinder } from '@adonisjs/auth/mixins/lucid'
 import { DbAccessTokensProvider } from '@adonisjs/auth/access_tokens'
+import type { ManyToMany } from '@adonisjs/lucid/types/relations'
+import Product from '#models/product'
 
 const AuthFinder = withAuthFinder(() => hash.use('scrypt'), {
   uids: ['email'],
@@ -40,6 +42,15 @@ export default class User extends compose(BaseModel, AuthFinder) {
 
   @column()
   declare providerId: string
+
+  @manyToMany(() => Product, {
+    localKey: 'id',
+    pivotForeignKey: 'user_id',
+    relatedKey: 'id',
+    pivotRelatedForeignKey: 'product_id',
+    pivotTable: 'cart_items',
+  })
+  declare cartItems: ManyToMany<typeof Product>
 
   static accessTokens = DbAccessTokensProvider.forModel(User)
 }

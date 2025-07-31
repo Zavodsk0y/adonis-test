@@ -97,60 +97,97 @@
           }
         }
       },
-      "Breed": {
+      "Category": {
         "type": "object",
         "required": [],
         "properties": {
           "id": {
             "type": "number",
-            "example": 706
-          },
-          "breed_group": {
-            "$ref": "#/components/schemas/BreedGroup",
-            "example": null
+            "example": 48
           },
           "name": {
             "type": "string",
             "example": "John Doe"
           },
-          "serialize_cherry_pick": {
-            "$ref": "#/components/schemas/CherryPick)",
-            "example": null
-          }
-        },
-        "description": "Breed (Model)"
-      },
-      "BreedGroup": {
-        "type": "object",
-        "required": [],
-        "properties": {
-          "id": {
-            "type": "number",
-            "example": 305
-          },
-          "name": {
-            "type": "string",
-            "example": "John Doe"
-          },
-          "breeds": {
+          "products": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/Breed",
+              "$ref": "#/components/schemas/Product",
               "example": null
             }
           },
-          "created_at": {
+          "createdAt": {
             "type": "string",
             "example": "2021-03-23T16:13:08.489+01:00",
             "format": "date-time"
           },
-          "updated_at": {
+          "updatedAt": {
             "type": "string",
             "example": "2021-03-23T16:13:08.489+01:00",
             "format": "date-time"
           }
         },
-        "description": "BreedGroup (Model)"
+        "description": "Category (Model)"
+      },
+      "Product": {
+        "type": "object",
+        "required": [],
+        "properties": {
+          "id": {
+            "type": "number",
+            "example": 139
+          },
+          "name": {
+            "type": "string",
+            "example": "John Doe"
+          },
+          "price": {
+            "type": "number",
+            "example": 10.5
+          },
+          "description": {
+            "type": "string",
+            "example": "Lorem ipsum dolor sit amet"
+          },
+          "status": {
+            "type": "string",
+            "example": "Активен",
+            "enum": [
+              "Активен",
+              "Вожидании",
+              "Приостановлен"
+            ]
+          },
+          "imagePath": {
+            "type": "string",
+            "example": "Lorem Ipsum"
+          },
+          "categories": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Category",
+              "example": null
+            }
+          },
+          "inCartOfUsers": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/User",
+              "example": null
+            }
+          },
+          "createdAt": {
+            "type": "string",
+            "example": "2021-03-23T16:13:08.489+01:00",
+            "format": "date-time"
+          },
+          "updatedAt": {
+            "type": "string",
+            "example": "2021-03-23T16:13:08.489+01:00",
+            "format": "date-time"
+          }
+        },
+        "description": "Product (Model)"
       },
       "User": {
         "type": "object",
@@ -158,9 +195,9 @@
         "properties": {
           "id": {
             "type": "number",
-            "example": 58
+            "example": 681
           },
-          "full_name": {
+          "fullName": {
             "type": "string",
             "example": "John Doe"
           },
@@ -169,21 +206,21 @@
             "example": "johndoe@example.com",
             "format": "email"
           },
-          "created_at": {
+          "createdAt": {
             "type": "string",
             "example": "2021-03-23T16:13:08.489+01:00",
             "format": "date-time"
           },
-          "updated_at": {
+          "updatedAt": {
             "type": "string",
             "example": "2021-03-23T16:13:08.489+01:00",
             "format": "date-time"
           },
-          "is_verified": {
+          "isVerified": {
             "type": "boolean",
             "example": true
           },
-          "email_token_confirmation": {
+          "emailTokenConfirmation": {
             "type": "string",
             "example": "Lorem Ipsum"
           },
@@ -191,12 +228,95 @@
             "type": "string",
             "example": "Lorem Ipsum"
           },
-          "provider_id": {
+          "providerId": {
             "type": "string",
             "example": "Lorem Ipsum"
+          },
+          "cartItems": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Product",
+              "example": null
+            }
           }
         },
         "description": "User (Model)"
+      },
+      "createCategoryValidator": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "example": "Lorem Ipsum",
+            "required": true
+          }
+        },
+        "example": {
+          "name": "Lorem Ipsum"
+        },
+        "description": "createCategoryValidator (Validator)"
+      },
+      "attachCategoriesValidator": {
+        "type": "object",
+        "properties": {
+          "categories": {
+            "type": "array",
+            "items": {
+              "type": "number",
+              "example": 658
+            },
+            "required": true
+          }
+        },
+        "example": {
+          "categories": [
+            658
+          ]
+        },
+        "description": "attachCategoriesValidator (Validator)"
+      },
+      "createProductValidator": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "example": "Lorem Ipsum",
+            "required": true
+          },
+          "price": {
+            "type": "number",
+            "example": 748,
+            "required": true
+          },
+          "description": {
+            "type": "string",
+            "example": "Lorem Ipsum",
+            "required": true
+          },
+          "image": {
+            "type": "number",
+            "example": 961,
+            "required": true
+          },
+          "categories": {
+            "type": "array",
+            "items": {
+              "type": "number",
+              "example": 642
+            },
+            "required": true
+          }
+        },
+        "example": {
+          "name": "Lorem Ipsum",
+          "price": 748,
+          "description": "Lorem Ipsum",
+          "image": 961,
+          "categories": [
+            642
+          ]
+        },
+        "description": "createProductValidator (Validator)"
       },
       "changeEmailValidator": {
         "type": "object",
@@ -302,6 +422,25 @@
     }
   },
   "paths": {
+    "/uploads/*": {
+      "get": {
+        "summary": "route",
+        "description": "\n\n __ - ****",
+        "parameters": [],
+        "tags": [
+          "*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {}
+            }
+          }
+        },
+        "security": []
+      }
+    },
     "/": {
       "get": {
         "summary": "route",
@@ -319,12 +458,849 @@
         "security": []
       }
     },
+    "/products": {
+      "get": {
+        "summary": "Get all active products in system (index)",
+        "description": "Returns **200** (OK) as **application/json**\n\n _app/controllers/product/products_controller.ts_ - **index**",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "page",
+            "description": "the Page number",
+            "schema": {
+              "example": "",
+              "type": "number"
+            },
+            "required": false
+          }
+        ],
+        "tags": [
+          "PRODUCT"
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/Product"
+                      }
+                    },
+                    "meta": {
+                      "$ref": "#/components/schemas/PaginationMeta"
+                    }
+                  }
+                },
+                "example": {
+                  "data": [
+                    {
+                      "id": 139,
+                      "name": "John Doe",
+                      "price": 10.5,
+                      "description": "Lorem ipsum dolor sit amet",
+                      "status": "Активен",
+                      "imagePath": "Lorem Ipsum",
+                      "categories": [
+                        {
+                          "id": 48,
+                          "name": "John Doe",
+                          "createdAt": "2021-03-23T16:13:08.489+01:00",
+                          "updatedAt": "2021-03-23T16:13:08.489+01:00"
+                        }
+                      ],
+                      "createdAt": "2021-03-23T16:13:08.489+01:00",
+                      "updatedAt": "2021-03-23T16:13:08.489+01:00"
+                    }
+                  ],
+                  "meta": {
+                    "total": 100,
+                    "page": 2,
+                    "perPage": 10,
+                    "currentPage": 3,
+                    "lastPage": 10,
+                    "firstPage": 1,
+                    "lastPageUrl": "/?page=10",
+                    "firstPageUrl": "/?page=1",
+                    "nextPageUrl": "/?page=6",
+                    "previousPageUrl": "/?page=5"
+                  }
+                }
+              }
+            },
+            "description": "Returns **200** (OK) as **application/json**"
+          }
+        },
+        "security": []
+      },
+      "post": {
+        "summary": "Create product (store)",
+        "description": "Returns **201** (Created) as **application/json**\n\n _app/controllers/product/products_controller.ts_ - **store**",
+        "parameters": [],
+        "tags": [
+          "PRODUCT"
+        ],
+        "responses": {
+          "201": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Product"
+                },
+                "example": {
+                  "id": 139,
+                  "name": "John Doe",
+                  "price": 10.5,
+                  "description": "Lorem ipsum dolor sit amet",
+                  "status": "Активен",
+                  "imagePath": "Lorem Ipsum",
+                  "createdAt": "2021-03-23T16:13:08.489+01:00",
+                  "updatedAt": "2021-03-23T16:13:08.489+01:00"
+                }
+              }
+            },
+            "description": "Returns **201** (Created) as **application/json**"
+          }
+        },
+        "security": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/createProductValidator"
+              },
+              "example": {
+                "name": "Lorem Ipsum",
+                "price": 748,
+                "description": "Lorem Ipsum",
+                "image": 961,
+                "categories": [
+                  642
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "/products/create": {
+      "get": {
+        "summary": "Create (Frontend) create (create)",
+        "description": "\n\n _app/controllers/product/products_controller.ts_ - **create**",
+        "parameters": [],
+        "tags": [
+          "CREATE"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {}
+            }
+          }
+        },
+        "security": []
+      }
+    },
+    "/products/{id}": {
+      "get": {
+        "summary": "Get product by id (show)",
+        "description": "Returns **200** (OK) as **application/json**\n\n _app/controllers/product/products_controller.ts_ - **show**",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "Product's id",
+            "schema": {
+              "example": "",
+              "type": "number"
+            },
+            "required": false
+          }
+        ],
+        "tags": [
+          "PRODUCT"
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Product"
+                },
+                "example": {
+                  "id": 139,
+                  "name": "John Doe",
+                  "price": 10.5,
+                  "description": "Lorem ipsum dolor sit amet",
+                  "status": "Активен",
+                  "imagePath": "Lorem Ipsum",
+                  "createdAt": "2021-03-23T16:13:08.489+01:00",
+                  "updatedAt": "2021-03-23T16:13:08.489+01:00"
+                }
+              }
+            },
+            "description": "Returns **200** (OK) as **application/json**"
+          }
+        },
+        "security": []
+      },
+      "patch": {
+        "summary": "Update :id (update)",
+        "description": "\n\n _app/controllers/product/products_controller.ts_ - **update**",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "tags": [
+          ":ID"
+        ],
+        "responses": {
+          "undefined": {
+            "description": "Unknown",
+            "content": {
+              "application/json": {}
+            }
+          }
+        },
+        "security": [],
+        "requestBody": {
+          "content": {
+            "application/json": {}
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete :id (destroy)",
+        "description": "\n\n _app/controllers/product/products_controller.ts_ - **destroy**",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "tags": [
+          ":ID"
+        ],
+        "responses": {
+          "202": {
+            "description": "Accepted",
+            "content": {
+              "application/json": {}
+            }
+          }
+        },
+        "security": []
+      }
+    },
+    "/products/{id}/edit": {
+      "get": {
+        "summary": "Update (Frontend) :id (edit)",
+        "description": "\n\n _app/controllers/product/products_controller.ts_ - **edit**",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "tags": [
+          ":ID"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {}
+            }
+          }
+        },
+        "security": []
+      }
+    },
+    "/products/update-status/{id}": {
+      "post": {
+        "summary": "Update status of product (handle)",
+        "description": "Here we have implementation of product's status transitions. All the way: Pending -> Active -> Suspended, Suspended -> Active\n\n _app/controllers/product/update_product_status_controller.ts_ - **handle**",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "Product's id",
+            "schema": {
+              "example": "",
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "tags": [
+          "PRODUCT"
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": "Product status changed successfully",
+                    "user": {
+                      "$ref": "#/components/schemas/Product"
+                    }
+                  }
+                },
+                "example": {
+                  "message": "Product status changed successfully",
+                  "user": {
+                    "id": 139,
+                    "name": "John Doe",
+                    "price": 10.5,
+                    "description": "Lorem ipsum dolor sit amet",
+                    "status": "Активен",
+                    "imagePath": "Lorem Ipsum",
+                    "createdAt": "2021-03-23T16:13:08.489+01:00",
+                    "updatedAt": "2021-03-23T16:13:08.489+01:00"
+                  }
+                }
+              }
+            },
+            "description": "Returns **200** (OK) as **application/json**"
+          }
+        },
+        "security": []
+      }
+    },
+    "/products/attach-categories/{id}": {
+      "post": {
+        "summary": "Attach categories (ids) to product (handle)",
+        "description": "\n\n _app/controllers/product/attach_categories_to_product_controller.ts_ - **handle**",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "Product's id",
+            "schema": {
+              "example": "",
+              "type": "number"
+            },
+            "required": false
+          }
+        ],
+        "tags": [
+          "PRODUCT"
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Product"
+                },
+                "example": {
+                  "id": 139,
+                  "name": "John Doe",
+                  "price": 10.5,
+                  "description": "Lorem ipsum dolor sit amet",
+                  "status": "Активен",
+                  "imagePath": "Lorem Ipsum",
+                  "categories": [
+                    {
+                      "id": 48,
+                      "name": "John Doe",
+                      "createdAt": "2021-03-23T16:13:08.489+01:00",
+                      "updatedAt": "2021-03-23T16:13:08.489+01:00"
+                    }
+                  ],
+                  "createdAt": "2021-03-23T16:13:08.489+01:00",
+                  "updatedAt": "2021-03-23T16:13:08.489+01:00"
+                }
+              }
+            },
+            "description": "Returns **200** (OK) as **application/json**"
+          }
+        },
+        "security": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/attachCategoriesValidator"
+              },
+              "example": {
+                "categories": [
+                  658
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "/products/detach-categories/{id}": {
+      "post": {
+        "summary": "Detach categories (ids) from product (handle)",
+        "description": "\n\n _app/controllers/product/detach_categories_from_product_controller.ts_ - **handle**",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "Product's id",
+            "schema": {
+              "example": "",
+              "type": "number"
+            },
+            "required": false
+          }
+        ],
+        "tags": [
+          "PRODUCT"
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Product"
+                },
+                "example": {
+                  "id": 139,
+                  "name": "John Doe",
+                  "price": 10.5,
+                  "description": "Lorem ipsum dolor sit amet",
+                  "status": "Активен",
+                  "imagePath": "Lorem Ipsum",
+                  "categories": [
+                    {
+                      "id": 48,
+                      "name": "John Doe",
+                      "createdAt": "2021-03-23T16:13:08.489+01:00",
+                      "updatedAt": "2021-03-23T16:13:08.489+01:00"
+                    }
+                  ],
+                  "createdAt": "2021-03-23T16:13:08.489+01:00",
+                  "updatedAt": "2021-03-23T16:13:08.489+01:00"
+                }
+              }
+            },
+            "description": "Returns **200** (OK) as **application/json**"
+          }
+        },
+        "security": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/attachCategoriesValidator"
+              },
+              "example": {
+                "categories": [
+                  658
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "/cart/{id}": {
+      "post": {
+        "summary": "Add product to cart by its id (handle)",
+        "description": "\n\n _app/controllers/product/add_product_to_cart_controller.ts_ - **handle**",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "Product's id",
+            "schema": {
+              "example": "",
+              "type": "number"
+            },
+            "required": false
+          }
+        ],
+        "tags": [
+          "CART"
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "product": {
+                      "$ref": "#/components/schemas/Product"
+                    },
+                    "total": "15"
+                  }
+                },
+                "example": {
+                  "product": {
+                    "id": 139,
+                    "name": "John Doe",
+                    "price": 10.5,
+                    "description": "Lorem ipsum dolor sit amet",
+                    "status": "Активен",
+                    "imagePath": "Lorem Ipsum",
+                    "createdAt": "2021-03-23T16:13:08.489+01:00",
+                    "updatedAt": "2021-03-23T16:13:08.489+01:00"
+                  },
+                  "total": "15"
+                }
+              }
+            },
+            "description": "Returns **200** (OK) as **application/json**"
+          },
+          "401": {
+            "description": "Returns **401** (Unauthorized)"
+          },
+          "403": {
+            "description": "Returns **403** (Forbidden)"
+          }
+        },
+        "security": [
+          {
+            "BearerAuth": [
+              "access"
+            ]
+          }
+        ]
+      }
+    },
+    "/cart": {
+      "get": {
+        "summary": "Show products in user's cart (handle)",
+        "description": "Returns **200** (OK) as **application/json**\n\n _app/controllers/product/get_products_in_cart_controller.ts_ - **handle**",
+        "parameters": [],
+        "tags": [
+          "CART"
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Product"
+                  }
+                },
+                "example": [
+                  {
+                    "id": 139,
+                    "name": "John Doe",
+                    "price": 10.5,
+                    "description": "Lorem ipsum dolor sit amet",
+                    "status": "Активен",
+                    "imagePath": "Lorem Ipsum",
+                    "categories": [
+                      {
+                        "id": 48,
+                        "name": "John Doe",
+                        "createdAt": "2021-03-23T16:13:08.489+01:00",
+                        "updatedAt": "2021-03-23T16:13:08.489+01:00"
+                      }
+                    ],
+                    "createdAt": "2021-03-23T16:13:08.489+01:00",
+                    "updatedAt": "2021-03-23T16:13:08.489+01:00"
+                  }
+                ]
+              }
+            },
+            "description": "Returns **200** (OK) as **application/json**"
+          },
+          "401": {
+            "description": "Returns **401** (Unauthorized)"
+          },
+          "403": {
+            "description": "Returns **403** (Forbidden)"
+          }
+        },
+        "security": [
+          {
+            "BearerAuth": [
+              "access"
+            ]
+          }
+        ]
+      }
+    },
+    "/categories": {
+      "get": {
+        "summary": "Get all categories (index)",
+        "description": "Returns **200** (OK) as **application/json**\n\n _app/controllers/category/categories_controller.ts_ - **index**",
+        "parameters": [],
+        "tags": [
+          "CATEGORY"
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Category"
+                  }
+                },
+                "example": [
+                  {
+                    "id": 48,
+                    "name": "John Doe",
+                    "createdAt": "2021-03-23T16:13:08.489+01:00",
+                    "updatedAt": "2021-03-23T16:13:08.489+01:00"
+                  }
+                ]
+              }
+            },
+            "description": "Returns **200** (OK) as **application/json**"
+          }
+        },
+        "security": []
+      },
+      "post": {
+        "summary": "Create category (store)",
+        "description": "Returns **201** (Created) as **application/json**\n\n _app/controllers/category/categories_controller.ts_ - **store**",
+        "parameters": [],
+        "tags": [
+          "CATEGORY"
+        ],
+        "responses": {
+          "201": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Category"
+                },
+                "example": {
+                  "id": 48,
+                  "name": "John Doe",
+                  "createdAt": "2021-03-23T16:13:08.489+01:00",
+                  "updatedAt": "2021-03-23T16:13:08.489+01:00"
+                }
+              }
+            },
+            "description": "Returns **201** (Created) as **application/json**"
+          }
+        },
+        "security": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/createCategoryValidator"
+              },
+              "example": {
+                "name": "Lorem Ipsum"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/categories/create": {
+      "get": {
+        "summary": "Create (Frontend) create (create)",
+        "description": "\n\n _app/controllers/category/categories_controller.ts_ - **create**",
+        "parameters": [],
+        "tags": [
+          "CREATE"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {}
+            }
+          }
+        },
+        "security": []
+      }
+    },
+    "/categories/{id}": {
+      "get": {
+        "summary": "Get a single instance of :id (show)",
+        "description": "\n\n _app/controllers/category/categories_controller.ts_ - **show**",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "tags": [
+          ":ID"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {}
+            }
+          }
+        },
+        "security": []
+      },
+      "patch": {
+        "summary": "Update :id (update)",
+        "description": "\n\n _app/controllers/category/categories_controller.ts_ - **update**",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "tags": [
+          ":ID"
+        ],
+        "responses": {
+          "undefined": {
+            "description": "Unknown",
+            "content": {
+              "application/json": {}
+            }
+          }
+        },
+        "security": [],
+        "requestBody": {
+          "content": {
+            "application/json": {}
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete :id (destroy)",
+        "description": "\n\n _app/controllers/category/categories_controller.ts_ - **destroy**",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "tags": [
+          ":ID"
+        ],
+        "responses": {
+          "202": {
+            "description": "Accepted",
+            "content": {
+              "application/json": {}
+            }
+          }
+        },
+        "security": []
+      }
+    },
+    "/categories/{id}/edit": {
+      "get": {
+        "summary": "Update (Frontend) :id (edit)",
+        "description": "\n\n _app/controllers/category/categories_controller.ts_ - **edit**",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "tags": [
+          ":ID"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {}
+            }
+          }
+        },
+        "security": []
+      }
+    },
+    "/categories-with-last-products": {
+      "get": {
+        "summary": "Show categories and 3 last products of each (handle)",
+        "description": "Returns **200** (OK) as **application/json**\n\n _app/controllers/category/get_categories_with_last_three_products.ts_ - **handle**",
+        "parameters": [],
+        "tags": [
+          "CATEGORY"
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Category"
+                  }
+                },
+                "example": [
+                  {
+                    "id": 48,
+                    "name": "John Doe",
+                    "products": [
+                      {
+                        "id": 139,
+                        "name": "John Doe",
+                        "price": 10.5,
+                        "description": "Lorem ipsum dolor sit amet",
+                        "status": "Активен",
+                        "imagePath": "Lorem Ipsum",
+                        "createdAt": "2021-03-23T16:13:08.489+01:00",
+                        "updatedAt": "2021-03-23T16:13:08.489+01:00"
+                      }
+                    ],
+                    "createdAt": "2021-03-23T16:13:08.489+01:00",
+                    "updatedAt": "2021-03-23T16:13:08.489+01:00"
+                  }
+                ]
+              }
+            },
+            "description": "Returns **200** (OK) as **application/json**"
+          }
+        },
+        "security": []
+      }
+    },
     "/signup": {
       "post": {
         "summary": " (signup)",
         "description": "Returns **201** (Created) as **application/json**\n\n _app/controllers/user/users_controller.ts_ - **signup**",
         "parameters": [],
-        "tags": ["USER"],
+        "tags": [
+          "USER"
+        ],
         "responses": {
           "201": {
             "content": {
@@ -333,15 +1309,15 @@
                   "$ref": "#/components/schemas/User"
                 },
                 "example": {
-                  "id": 58,
-                  "full_name": "John Doe",
+                  "id": 681,
+                  "fullName": "John Doe",
                   "email": "johndoe@example.com",
-                  "created_at": "2021-03-23T16:13:08.489+01:00",
-                  "updated_at": "2021-03-23T16:13:08.489+01:00",
-                  "is_verified": true,
-                  "email_token_confirmation": "Lorem Ipsum",
+                  "createdAt": "2021-03-23T16:13:08.489+01:00",
+                  "updatedAt": "2021-03-23T16:13:08.489+01:00",
+                  "isVerified": true,
+                  "emailTokenConfirmation": "Lorem Ipsum",
                   "provider": "Lorem Ipsum",
-                  "provider_id": "Lorem Ipsum"
+                  "providerId": "Lorem Ipsum"
                 }
               }
             },
@@ -370,19 +1346,41 @@
         "summary": " (login)",
         "description": "\n\n _app/controllers/user/users_controller.ts_ - **login**",
         "parameters": [],
-        "tags": [""],
+        "tags": [
+          "USER"
+        ],
         "responses": {
-          "201": {
-            "description": "Created",
+          "200": {
             "content": {
-              "application/json": {}
-            }
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": "User login successfully",
+                    "token": "xxxxxx"
+                  }
+                },
+                "example": {
+                  "message": "User login successfully",
+                  "token": "xxxxxx"
+                }
+              }
+            },
+            "description": "Returns **200** (OK) as **application/json**"
           }
         },
         "security": [],
         "requestBody": {
           "content": {
-            "application/json": {}
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/loginUserValidator"
+              },
+              "example": {
+                "email": "Lorem Ipsum",
+                "password": "Lorem Ipsum"
+              }
+            }
           }
         }
       }
@@ -390,24 +1388,38 @@
     "/verify-email/{token}": {
       "get": {
         "summary": " (emailVerify)",
-        "description": "\n\n _app/controllers/user/users_controller.ts_ - **emailVerify**",
+        "description": "Returns **200** (OK) as **application/json**\n\n _app/controllers/user/users_controller.ts_ - **emailVerify**",
         "parameters": [
           {
             "in": "path",
             "name": "token",
+            "description": "The token of the verify",
             "schema": {
+              "example": "",
               "type": "string"
             },
-            "required": true
+            "required": false
           }
         ],
-        "tags": [":TOKEN"],
+        "tags": [
+          "USER"
+        ],
         "responses": {
           "200": {
-            "description": "OK",
             "content": {
-              "application/json": {}
-            }
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": "Email confirmed successfully"
+                  }
+                },
+                "example": {
+                  "message": "Email confirmed successfully"
+                }
+              }
+            },
+            "description": "Returns **200** (OK) as **application/json**"
           }
         },
         "security": []
@@ -418,7 +1430,9 @@
         "summary": "Get a list of  (index)",
         "description": "\n\n _app/controllers/user/users_controller.ts_ - **index**",
         "parameters": [],
-        "tags": [""],
+        "tags": [
+          ""
+        ],
         "responses": {
           "401": {
             "description": "Returns **401** (Unauthorized)"
@@ -429,7 +1443,9 @@
         },
         "security": [
           {
-            "BearerAuth": ["access"]
+            "BearerAuth": [
+              "access"
+            ]
           }
         ]
       }
@@ -439,8 +1455,40 @@
         "summary": " (changeFullName)",
         "description": "\n\n _app/controllers/user/users_controller.ts_ - **changeFullName**",
         "parameters": [],
-        "tags": ["ME"],
+        "tags": [
+          "USER"
+        ],
         "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": "Full name updated successfully",
+                    "user": {
+                      "$ref": "#/components/schemas/User"
+                    }
+                  }
+                },
+                "example": {
+                  "message": "Full name updated successfully",
+                  "user": {
+                    "id": 681,
+                    "fullName": "John Doe",
+                    "email": "johndoe@example.com",
+                    "createdAt": "2021-03-23T16:13:08.489+01:00",
+                    "updatedAt": "2021-03-23T16:13:08.489+01:00",
+                    "isVerified": true,
+                    "emailTokenConfirmation": "Lorem Ipsum",
+                    "provider": "Lorem Ipsum",
+                    "providerId": "Lorem Ipsum"
+                  }
+                }
+              }
+            },
+            "description": "Returns **200** (OK) as **application/json**"
+          },
           "401": {
             "description": "Returns **401** (Unauthorized)"
           },
@@ -450,12 +1498,21 @@
         },
         "security": [
           {
-            "BearerAuth": ["access"]
+            "BearerAuth": [
+              "access"
+            ]
           }
         ],
         "requestBody": {
           "content": {
-            "application/json": {}
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/changeFullNameValidator"
+              },
+              "example": {
+                "fullName": "Lorem Ipsum"
+              }
+            }
           }
         }
       }
@@ -465,8 +1522,40 @@
         "summary": " (changeEmail)",
         "description": "\n\n _app/controllers/user/users_controller.ts_ - **changeEmail**",
         "parameters": [],
-        "tags": ["ME"],
+        "tags": [
+          "USER"
+        ],
         "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": "Email updated successfully, check your email for verification",
+                    "user": {
+                      "$ref": "#/components/schemas/User"
+                    }
+                  }
+                },
+                "example": {
+                  "message": "Email updated successfully, check your email for verification",
+                  "user": {
+                    "id": 681,
+                    "fullName": "John Doe",
+                    "email": "johndoe@example.com",
+                    "createdAt": "2021-03-23T16:13:08.489+01:00",
+                    "updatedAt": "2021-03-23T16:13:08.489+01:00",
+                    "isVerified": true,
+                    "emailTokenConfirmation": "Lorem Ipsum",
+                    "provider": "Lorem Ipsum",
+                    "providerId": "Lorem Ipsum"
+                  }
+                }
+              }
+            },
+            "description": "Returns **200** (OK) as **application/json**"
+          },
           "401": {
             "description": "Returns **401** (Unauthorized)"
           },
@@ -476,12 +1565,21 @@
         },
         "security": [
           {
-            "BearerAuth": ["access"]
+            "BearerAuth": [
+              "access"
+            ]
           }
         ],
         "requestBody": {
           "content": {
-            "application/json": {}
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/changeEmailValidator"
+              },
+              "example": {
+                "email": "Lorem Ipsum"
+              }
+            }
           }
         }
       }
@@ -491,8 +1589,40 @@
         "summary": " (changePassword)",
         "description": "\n\n _app/controllers/user/users_controller.ts_ - **changePassword**",
         "parameters": [],
-        "tags": ["ME"],
+        "tags": [
+          "USER"
+        ],
         "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": "Password updated",
+                    "user": {
+                      "$ref": "#/components/schemas/User"
+                    }
+                  }
+                },
+                "example": {
+                  "message": "Password updated",
+                  "user": {
+                    "id": 681,
+                    "fullName": "John Doe",
+                    "email": "johndoe@example.com",
+                    "createdAt": "2021-03-23T16:13:08.489+01:00",
+                    "updatedAt": "2021-03-23T16:13:08.489+01:00",
+                    "isVerified": true,
+                    "emailTokenConfirmation": "Lorem Ipsum",
+                    "provider": "Lorem Ipsum",
+                    "providerId": "Lorem Ipsum"
+                  }
+                }
+              }
+            },
+            "description": "Returns **200** (OK) as **application/json**"
+          },
           "401": {
             "description": "Returns **401** (Unauthorized)"
           },
@@ -502,12 +1632,22 @@
         },
         "security": [
           {
-            "BearerAuth": ["access"]
+            "BearerAuth": [
+              "access"
+            ]
           }
         ],
         "requestBody": {
           "content": {
-            "application/json": {}
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/changePasswordValidator"
+              },
+              "example": {
+                "old_password": "Lorem Ipsum",
+                "new_password": "Lorem Ipsum"
+              }
+            }
           }
         }
       }
@@ -520,13 +1660,21 @@
           {
             "in": "path",
             "name": "provider",
+            "description": "The login provider to be used",
             "schema": {
-              "type": "string"
+              "example": "google",
+              "type": "string",
+              "enum": [
+                "google",
+                "github"
+              ]
             },
-            "required": true
+            "required": false
           }
         ],
-        "tags": ["REDIRECT"],
+        "tags": [
+          "USER"
+        ],
         "responses": {
           "200": {
             "description": "OK",
@@ -541,41 +1689,56 @@
     "/{provider}/auth/callback": {
       "get": {
         "summary": " (callback)",
-        "description": "\n\n _app/controllers/user/oauth_controller.ts_ - **callback**",
+        "description": "Returns **200** (OK) as **application/json**\n\n _app/controllers/user/oauth_controller.ts_ - **callback**",
         "parameters": [
           {
             "in": "path",
             "name": "provider",
+            "description": "The login provider to be used",
             "schema": {
-              "type": "string"
+              "example": "google",
+              "type": "string",
+              "enum": [
+                "google",
+                "github"
+              ]
             },
-            "required": true
+            "required": false
           }
         ],
-        "tags": ["AUTH"],
+        "tags": [
+          "USER"
+        ],
         "responses": {
           "200": {
-            "description": "OK",
             "content": {
-              "application/json": {}
-            }
-          }
-        },
-        "security": []
-      }
-    },
-    "/breeds": {
-      "get": {
-        "summary": "Get a list of  (index)",
-        "description": "\n\n _app/controllers/breed/breeds_controller.ts_ - **index**",
-        "parameters": [],
-        "tags": [""],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {}
-            }
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "user": {
+                      "$ref": "#/components/schemas/User"
+                    },
+                    "token": "xxxxxx"
+                  }
+                },
+                "example": {
+                  "user": {
+                    "id": 681,
+                    "fullName": "John Doe",
+                    "email": "johndoe@example.com",
+                    "createdAt": "2021-03-23T16:13:08.489+01:00",
+                    "updatedAt": "2021-03-23T16:13:08.489+01:00",
+                    "isVerified": true,
+                    "emailTokenConfirmation": "Lorem Ipsum",
+                    "provider": "Lorem Ipsum",
+                    "providerId": "Lorem Ipsum"
+                  },
+                  "token": "xxxxxx"
+                }
+              }
+            },
+            "description": "Returns **200** (OK) as **application/json**"
           }
         },
         "security": []
@@ -584,24 +1747,92 @@
   },
   "tags": [
     {
+      "name": "*",
+      "description": "Everything related to *"
+    },
+    {
+      "name": "PRODUCT",
+      "description": "Everything related to PRODUCT"
+    },
+    {
+      "name": "CREATE",
+      "description": "Everything related to CREATE"
+    },
+    {
+      "name": "PRODUCT",
+      "description": "Everything related to PRODUCT"
+    },
+    {
+      "name": ":ID",
+      "description": "Everything related to :ID"
+    },
+    {
+      "name": "PRODUCT",
+      "description": "Everything related to PRODUCT"
+    },
+    {
+      "name": "PRODUCT",
+      "description": "Everything related to PRODUCT"
+    },
+    {
+      "name": "PRODUCT",
+      "description": "Everything related to PRODUCT"
+    },
+    {
+      "name": "PRODUCT",
+      "description": "Everything related to PRODUCT"
+    },
+    {
+      "name": "CART",
+      "description": "Everything related to CART"
+    },
+    {
+      "name": "CART",
+      "description": "Everything related to CART"
+    },
+    {
+      "name": "CATEGORY",
+      "description": "Everything related to CATEGORY"
+    },
+    {
+      "name": "CATEGORY",
+      "description": "Everything related to CATEGORY"
+    },
+    {
+      "name": "CATEGORY",
+      "description": "Everything related to CATEGORY"
+    },
+    {
       "name": "USER",
       "description": "Everything related to USER"
     },
     {
-      "name": ":TOKEN",
-      "description": "Everything related to :TOKEN"
+      "name": "USER",
+      "description": "Everything related to USER"
     },
     {
-      "name": "ME",
-      "description": "Everything related to ME"
+      "name": "USER",
+      "description": "Everything related to USER"
     },
     {
-      "name": "REDIRECT",
-      "description": "Everything related to REDIRECT"
+      "name": "USER",
+      "description": "Everything related to USER"
     },
     {
-      "name": "AUTH",
-      "description": "Everything related to AUTH"
+      "name": "USER",
+      "description": "Everything related to USER"
+    },
+    {
+      "name": "USER",
+      "description": "Everything related to USER"
+    },
+    {
+      "name": "USER",
+      "description": "Everything related to USER"
+    },
+    {
+      "name": "USER",
+      "description": "Everything related to USER"
     }
   ]
 }
